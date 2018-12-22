@@ -1,6 +1,5 @@
 import React from 'react';
 import { render } from 'react-dom';
-import './index.css';
 
 class Index extends React.Component {
     constructor(props) {
@@ -11,27 +10,27 @@ class Index extends React.Component {
         };
 
         this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
+        this.login = this.login.bind(this);
     }
 
     render() {
         const { username, password } = this.state;
         return (
-            <div class="container">
-                <h1 class="form-heading">login Form</h1>
-                <div class="login-form">
-                    <div class="main-div">
-                        <div class="panel">
+            <div className="container">
+                <h1 className="form-heading">login Form</h1>
+                <div className="login-form">
+                    <div className="main-div">
+                        <div className="panel">
                             <p>Please enter your email and password</p>
                         </div>
-                        <form id="Login" onSubmit={this.handleSubmit}>
-                            <div class="form-group">
-                                <input type="text" class="form-control" name="username" value={username} onChange={this.handleChange} placeholder="Email Address" />
+                        <form id="Login" onSubmit={this.login}>
+                            <div className="form-group">
+                                <input type="text" className="form-control" name="username" value={username} onChange={this.handleChange} placeholder="Email Address" />
                             </div>
-                            <div class="form-group">
-                                <input type="password" class="form-control" name="password" value={password} onChange={this.handleChange} placeholder="Password" />
+                            <div className="form-group">
+                                <input type="password" className="form-control" name="password" value={password} onChange={this.handleChange} placeholder="Password" />
                             </div>
-                            <button type="submit" class="btn btn-primary">Login</button>
+                            <button type="submit" className="btn btn-primary">Login</button>
                         </form>
                     </div>
                 </div>
@@ -45,7 +44,7 @@ class Index extends React.Component {
         this.setState({ [name]: value });
     }
 
-    handleSubmit(e) {
+    login(e) {
         e.preventDefault();
         console.log(this.state);
     }
